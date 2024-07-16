@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 40%;
+  margin: 100px 30%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 680px;
+  padding: 100px 8%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.heading {
+  font-size: 36px;
+  font-weight: 900;
+}
+.exchange {
+  color: gray;
+  font-size: 24px;
+}
+.enterAmount {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  font-size: 16px;
+}
+.country {
+  display: flex;
+  justify-content: space-between;
+  margin: 10% 0px 0px 0px;
+  padding: 0 15%;
+}
+.countryFrom,
+.countryTo,
+.exchangeItem {
+  height: 100%;
+}
+.exchangeItem i {
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.from,
+.to {
+  margin-top: 10px;
+  font-size: 16px;
+  border: 0.8px solid lightgray;
+  padding: 2px;
+  outline: none;
+}
+.enterButton {
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: rgb(0, 115, 255);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.value {
+  font-size: 22px;
+  color: black;
+}
+.enterButton:hover {
+  background-color: rgba(0, 115, 255, 0.8);
+}
