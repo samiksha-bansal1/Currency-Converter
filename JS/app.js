@@ -38,11 +38,17 @@ const updateFlag = (evt) => {
   const img = evt.parentElement.querySelector("img");
   img.src = url;
 };
-
+//get result on btn click
 button.addEventListener("click", () => {
   let inputAmt = inputAmount.value;
-  console.log(inputAmt);
   info(inputAmt);
+});
+//get result on enter
+inputAmount.addEventListener("keydown", (evt) => {
+  if (evt.code == "Enter") {
+    let inputAmt = inputAmount.value;
+    info(inputAmt);
+  }
 });
 
 async function info(inputAmt) {
@@ -54,11 +60,23 @@ async function info(inputAmt) {
   const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${output}/v1/currencies/${fromCode}.json`;
   let response = await fetch(url);
   var data = await response.json();
-  console.log(data);
-  console.log(data[`${fromCode}`][`${toCode}`]);
   exchangeRate.innerHTML = data[`${fromCode}`][`${toCode}`];
   value.innerHTML = `${inputAmt} ${from.value} =${
     data[`${fromCode}`][`${toCode}`] * inputAmt
   } ${to.value}`;
 }
+//refresh
 info(0);
+//interchange
+const interChange = () => {
+  console.log("change");
+  let newFrom = to.value;
+  to.value = from.value;
+  from.value = newFrom;
+  updateFlag(from);
+  updateFlag(to);
+};
+exchangeItem.addEventListener("click", () => {
+  interChange();
+  info(inputAmount.value);
+});
