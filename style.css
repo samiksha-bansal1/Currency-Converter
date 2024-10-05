@@ -42,6 +42,8 @@
 .countryFrom,
 .countryTo,
 .exchangeItem {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 .exchangeItem i {
@@ -75,4 +77,26 @@
 }
 .enterButton:hover {
   background-color: rgba(0, 115, 255, 0.8);
+}
+@media (width<500px) {
+  .container {
+    width: 90%;
+    margin: 5%;
+    padding: 16% 8%;
+    padding-bottom: 0px;
+    box-shadow: none;
+    border: none;
+  }
+}
+@media (width>=500px) and (width<=900px) {
+  .container {
+    width: 80%;
+    margin: 10%;
+    padding: 10% 8%;
+  }
+  .countryFrom,
+  .countryTo {
+    justify-content: center;
+    align-items: center;
+  }
 }
